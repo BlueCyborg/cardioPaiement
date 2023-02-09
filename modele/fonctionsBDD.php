@@ -50,3 +50,9 @@ function demanderUser($id_client)
     $user_id_role = new WP_User($id_client);
     $user_id_role->add_role('paiementencours');
 }
+
+function getClientsDateAdherence()
+{
+    global $wpdb;
+    return $wpdb->get_results("SELECT `ID`,`user_nicename`,`dateAbonnement` FROM `z00b_users` WHERE `dateAbonnement` IS NOT NULL;");
+}

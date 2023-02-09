@@ -32,6 +32,15 @@ function add_Admin_Link_4()
         'gestionPaiement&option=demander',
         'cardioPaiementMain'
     );
+
+    add_submenu_page(
+        'gestionPaiement',
+        'Tableau',
+        'Tableau',
+        'can_access_cardiopaiement',
+        'gestionPaiement&option=tableau',
+        'cardioPaiementMain'
+    );
 }
 
 function cardioPaiementMain()
@@ -56,7 +65,7 @@ function cardioPaiementMain()
                 if (isset($_POST['formAccepter'])) {
                     validerUser($_POST['id_clientPaiement']);
                     include CPA_FILE_PATH . 'vues/validation.php';
-                }else {
+                } else {
                     include CPA_FILE_PATH . 'vues/accepter.php';
                 }
                 break;
@@ -65,9 +74,13 @@ function cardioPaiementMain()
                 if (isset($_POST['formDemander'])) {
                     demanderUser($_POST['id_clientPaiement']);
                     include CPA_FILE_PATH . 'vues/validation.php';
-                }else {
+                } else {
                     include CPA_FILE_PATH . 'vues/demander.php';
                 }
+                break;
+
+            case 'tableau':
+                include CPA_FILE_PATH . 'vues/tableau.php';
                 break;
 
             default:
