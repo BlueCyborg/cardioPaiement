@@ -56,3 +56,13 @@ function getClientsDateAdherence()
     global $wpdb;
     return $wpdb->get_results("SELECT `ID`,`user_nicename`,`dateAbonnement` FROM `z00b_users` WHERE `dateAbonnement` IS NOT NULL;");
 }
+
+function getClub($idClub)
+{
+    global $wpdb;
+    $query = $wpdb->prepare(
+        "SELECT nom FROM z00b_club WHERE `id` = %d ",
+        array($idClub)
+    );
+    return $wpdb->get_results($query) ?? null;
+}

@@ -16,5 +16,12 @@
         Demander paiement
       </button>
     </li>
+    <strong>ou bien</strong>
+    <li style="list-style-type: square;">
+      Voir les détails :
+      <button onclick="window.location.href = 'https://cardio-training.eu/wp-admin/admin.php?page=gestionPaiement&option=tableau';" style="display: inline-block; background-color: #154c79; border-radius: 10px; border: 4px double #cccccc; color: #eeeeee; text-align: center; width: 150px; transition: all 0.5s; cursor: pointer; margin: 5px;">
+        Tableau
+      </button>
+    </li>
   </p>
 </ul>
